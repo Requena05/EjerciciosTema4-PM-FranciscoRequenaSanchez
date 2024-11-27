@@ -137,6 +137,144 @@ fun main() {
             "circunferencia y un punto cualquiera de la misma. Crear el método longitud()\n" +
             "y sobrecargar el método toString() de forma que muestre toda la info de la\n" +
             "circunferencia\n")
+    var circulo = Circunferencia(2.89f)
+    println(circulo.toString())
+    println("La longitud del circulo es: "+circulo.longitud())
+
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 15: Crea la clase Círculo que hereda de circunferencia. Tendrá dos\n" +
+            "constructores, el primero recibirá el radio y el color del círculo y el segundo\n" +
+            "su centro, un punto cualquiera y su color. Crear el método área() y\n" +
+            "sobrecargar el método toString() de forma que muestre toda la info de la\n" +
+            "circunferencia")
+    var circulo2 = Circulo(3.14f,"Rojo")
+    println(circulo2.area())
+    println(circulo2.toString())
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 16: Clase de matemáticas. Crea una clase Matemáticas con métodos para realizar\n" +
+            "operaciones matemáticas como sumar, restar, multiplicar y dividir. Luego, utiliza esta clase en tu\n" +
+            "programa principal.")
+        println("Bienvenido a la calcular")
+        println("Eliga su funcion:")
+        println("1. Suma")
+    println("2. Resta")
+    println("3. Multiplicacion")
+    println("4. Division")
+    var funcion = readln().toInt()
+    println("Numero1:")
+    var num1 = readln().toFloat()
+    println("Numero2:")
+    var num2 = readln().toFloat()
+    var matematica = Matematicas(num1, num2)
+    if(funcion==1){
+        println("Resultado: "+matematica.sumar())
+    }
+    if(funcion==2){
+        println("Resultado: "+matematica.restar())
+    }
+    if(funcion==3){
+        println("Resultado: "+matematica.multiplicar())
+    }
+    if(funcion==4){
+        println("Resultado: "+matematica.dividir())
+    }
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 17: Implementa las siguientes clases:\n" +
+            "clase Nota. Una nota contiene un identificador numérico y una línea de texto. Define\n" +
+            "constructor, accedentes y toString.\n" +
+
+            "clase NotaAlarma. Una nota que además contiene la hora en la que sonará la alarma. Define\n" +
+            "constructor, accedentes y toString.\n" +
+
+            "clase BlocNotas que modela un bloc de notas en el que se pueden introducir notas, listar\n" +
+            "todas las notas, eliminar una nota mediante su posición en el bloc de notas o saber cuantas\n" +
+            "notas contiene el bloc de notas. Debes utilizar una colección.\n" +
+
+            "clase Prueba que cree un bloc de Notas de ejemplo y pruebe las operaciones que soporta. . ")
+
+    var notas = Nota(1,"Viva el vino")
+        notas.id
+        notas.texto_nota
+    var notaalarma=NotaAlarma(1,"vvvv",12,24)
+
+        println( notaalarma.hora_nota)
+        println( notaalarma.minuto_nota)
+    var blocdenotas: BlocDeNotas
+    blocdenotas = BlocDeNotas(mutableListOf<Nota>())
+    blocdenotas.addNota(1,"Viva el vino")
+    blocdenotas.addNota(2,"Viva la vida")
+    blocdenotas.addNota(3,"Viva la vida")
+    blocdenotas.addNota(4,"Viva la vida")
+    blocdenotas.addNota(5,"Viva la vida")
+    blocdenotas.listarNotas()
+
+    println("Numero de notas: "+blocdenotas.numeroNotas())
+
+    blocdenotas.eliminarNota(2)
+    blocdenotas.listarNotas()
+    println("Numero de notas: "+blocdenotas.numeroNotas())
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 18\n" +
+            "Define una jerarquía de clases que permita almacenar datos sobre los\n" +
+            "planetas y satélites que forman parte del sistema solar (junto con el sol).\n" +
+            "Algunos atributos que puede ser interesante recoger son: la masa del\n" +
+            "cuerpo, su diámetro medio, el período de rotación sobre el propio eje,\n" +
+            "período de traslación alrededor del cuerpo que orbitan, distancia media a\n" +
+            "ese cuerpo, excentricidad de la órbita, etc.\n" +
+            "Define un método que, dado un objeto del sistema solar (planeta o satélite),\n" +
+            "imprima toda la información de que se dispone sobre el mismo. ")
+
+    //Crea un planeta con los datos de la clase Planeta
+    var planeta1=Planeta("Saturno","Gaseoso",123.2313f,123.2313f,123.2313f,123.2313f,123.2313f,123.231f)
+    var satelite1=Satelite("Macaco","Rocoso",123.2313f,123.2313f,123.2313f,123.2313f,123.2313f,123.231f)
+    var sistemaSolar=SistemaSolar(mutableListOf<Any>(planeta1,satelite1))
+
+    sistemaSolar.mostrarPlanetas()
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 19\n" +
+            "Crea la clase PNJ que representa un personaje en un juego de rol.\n" +
+            "La clase tendrá los atributos, nombre, PV –Puntos de Vida-, PM\n" +
+            "–Puntos mágicos- y LVL. Crea las clases hijas de PNJ Guerrero y\n" +
+            "Mago. Dichas clases implementarán el método levelUp() que\n" +
+            "incrementa el atributo LVL del personaje y sus atributos PV y MP.\n" +
+            "Los guerreros por cada nuevo nivel tendrán un 8% más de PV y un\n" +
+            "1% más de PM mientras que los magos tendrán un 4% más de PV y\n" +
+            "un 3% más de PM. Crear un guerrero de nivel 1 con 400PV y 50PM y\n" +
+            "un mago de nivel 1 con 1600PV y 150PM. Partiendo del hecho de\n" +
+            "que ambos personajes subirán de nivel siempre a la vez ¿en qué\n" +
+            "nivel el guerrero tendrá más PV que el mago? ")
+    var mago=Mago()
+    var guerrero=Guerrero()
+    for (i in 1..10){
+        mago.subirlvl()
+        guerrero.subirlvl()
+
+    }
+    println("El guerrero supera al mago en el nivel 7 y tiene mas PV")
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 20. Crea la clase de datos Videojuego, que tendrá nombre, año y plataforma del\n" +
+            "juego. Crea una lista con 8 videojuegos de tres plataformas distintas. Crea una función\n" +
+            "que dada una lista de juegos, una año y una plataforma devuelve los juegos de la lista de\n" +
+            "dicho año y plataforma. La función también debe poder usarse especificando solo el año\n" +
+            "o solo la plataforma. ")
+    var lista = mutableListOf<Videojuego>()
+    lista.add(Videojuego("GTA",2020,"PC"))
+    lista.add(Videojuego("Fortnite",2017,"PC"))
+    lista.add(Videojuego("Crash Bandicoot",2002,"PC"))
+    lista.add(Videojuego("GTA",2020,"PS4"))
+    lista.add(Videojuego("Fortnite",2017,"PS4"))
+    lista.add(Videojuego("Crash Bandicoot",2002,"PS4"))
+    lista.add(Videojuego("GTA",2020,"Xbox"))
+    lista.add(Videojuego("Fortnite",2017,"Xbox"))
+    var nombre = Videojuego(" ",2020,"PC")
+    nombre.buscar(lista,nombre=null,año=2017, plataforma = null)
+    println("-----------------------------------------------------------------------------------------------------------------")
+
+
+
+
+
+
 
 
 }
