@@ -248,9 +248,13 @@ fun main() {
     for (i in 1..10){
         mago.subirlvl()
         guerrero.subirlvl()
+        if (guerrero.PV>mago.PV){
+            println("El guerrero supera al mago en el nivel "+guerrero.lvl+" y tiene mas PV")
+            break
+        }
 
     }
-    println("El guerrero supera al mago en el nivel 7 y tiene mas PV")
+
     println("-----------------------------------------------------------------------------------------------------------------")
     println("Ejercicio 20. Crea la clase de datos Videojuego, que tendrá nombre, año y plataforma del\n" +
             "juego. Crea una lista con 8 videojuegos de tres plataformas distintas. Crea una función\n" +
@@ -266,9 +270,22 @@ fun main() {
     lista.add(Videojuego("Crash Bandicoot",2002,"PS4"))
     lista.add(Videojuego("GTA",2020,"Xbox"))
     lista.add(Videojuego("Fortnite",2017,"Xbox"))
-    var nombre = Videojuego(" ",2020,"PC")
-    nombre.buscar(lista,nombre=null,año=2017, plataforma = null)
+
+   buscar(lista,2017,null)
     println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 21. Crear una función que dada una lista de videojuegos, lista de años y lista de\n" +
+            "plataformas devuelva los juegos de la lista que fueron creados en esos años y para esas\n" +
+            "plataformas. La función debe poder usarse si solo se especifica la lista de años o la lista\n" +
+            "de plataformas. ")
+
+
+    println("-----------------------------------------------------------------------------------------------------------------")
+    println("Ejercicio 22. Crea una función que reciba una lista de juegos y devuelva un mapa\n" +
+            "donde las claves sean las plataformas y el valor el número de juegos para dicha\n" +
+            "plataforma.")
+
+    println("-----------------------------------------------------------------------------------------------------------------")
+
 
 
 
